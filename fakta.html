@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fakta Unik — Rasulullah SAW</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Flip card */
+    .flip-card {
+      perspective: 1000px;
+      height: 200px;
+      cursor: pointer;
+    }
+    .flip-inner {
+      width: 100%;
+      height: 100%;
+      transition: transform 0.55s;
+      transform-style: preserve-3d;
+      position: relative;
+    }
+    .flip-card.flipped .flip-inner {
+      transform: rotateY(180deg);
+    }
+    .flip-front, .flip-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      text-align: center;
+    }
+    .flip-front {
+      background: #1a1a2e;
+      color: white;
+    }
+    .flip-front .icon { font-size: 2rem; margin-bottom: 10px; }
+    .flip-front h6 { font-size: 0.95rem; font-weight: 700; margin: 0; }
+    .flip-front small { font-size: 0.75rem; color: #aaa; margin-top: 6px; }
+    .flip-back {
+      background: #ffc107;
+      color: #1a1a2e;
+      transform: rotateY(180deg);
+    }
+    .flip-back p { font-size: 0.83rem; font-weight: 500; margin: 0; line-height: 1.5; }
+
+    /* Quiz */
+    .quiz-box {
+      background: white;
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+    .quiz-box .question {
+      font-weight: 700;
+      font-size: 1rem;
+      color: #1a1a2e;
+      margin-bottom: 15px;
+    }
+    .quiz-option {
+      display: block;
+      width: 100%;
+      text-align: left;
+      padding: 10px 15px;
+      margin-bottom: 8px;
+      border: 2px solid #dee2e6;
+      border-radius: 6px;
+      background: white;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .quiz-option:hover { border-color: #ffc107; background: #fff8e1; }
+    .quiz-option.correct { border-color: #198754; background: #d1e7dd; color: #0f5132; }
+    .quiz-option.wrong   { border-color: #dc3545; background: #f8d7da; color: #842029; }
+    .quiz-feedback { font-size: 0.88rem; margin-top: 10px; font-weight: 600; min-height: 20px; }
+
+    /* Angka counter */
+    .counter-box {
+      text-align: center;
+      padding: 30px 15px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    }
+    .counter-box .num {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #ffc107;
+    }
+    .counter-box p {
+      font-size: 0.85rem;
+      color: #666;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><span>☪ Sirah Nabawiyah</span></a>
+      <button class="navbar-toggler" type="button"
+        data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+          <li class="nav-item"><a class="nav-link" href="sejarah.html">Sejarah</a></li>
+          <li class="nav-item"><a class="nav-link" href="warisan.html">Warisan</a></li>
+          <li class="nav-item"><a class="nav-link" href="fakta.html">Fakta Unik</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="container">
+      <h2><i class="bi bi-lightbulb me-2"></i>Fakta Unik Rasulullah SAW</h2>
+      <p>Hal-hal menarik yang mungkin belum kamu tahu tentang beliau</p>
+    </div>
+  </div>
+
+  <!-- ANGKA PENTING -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="section-title text-center">Angka-angka Penting</h2>
+      <div class="title-line"></div>
+      <div class="row g-3">
+        <div class="col-6 col-md-3">
+          <div class="counter-box">
+            <div class="num" data-target="63">0</div>
+            <p>Tahun usia beliau</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="counter-box">
+            <div class="num" data-target="23">0</div>
+            <p>Tahun masa wahyu turun</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="counter-box">
+            <div class="num" data-target="114">0</div>
+            <p>Surah dalam Al-Qur'an</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="counter-box">
+            <div class="num" data-target="25">0</div>
+            <p>Tahun menikah dgn Khadijah</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MINI QUIZ -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="section-title text-center">Mini Quiz 🎯</h2>
+      <div class="title-line"></div>
+      <p class="text-center text-muted mb-4" style="font-size:0.9rem;">Seberapa banyak yang kamu tahu tentang Rasulullah SAW?</p>
+
+      <div class="row g-4 justify-content-center" id="quizContainer">
+
+        <div class="col-md-6">
+          <div class="quiz-box">
+            <div class="question">1. Di mana Rasulullah SAW lahir?</div>
+            <button class="quiz-option" data-correct="false" data-qid="1">Madinah</button>
+            <button class="quiz-option" data-correct="true"  data-qid="1">Makkah</button>
+            <button class="quiz-option" data-correct="false" data-qid="1">Thaif</button>
+            <div class="quiz-feedback" id="fb1"></div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="quiz-box">
+            <div class="question">2. Berapa usia Rasulullah SAW saat wafat?</div>
+            <button class="quiz-option" data-correct="false" data-qid="2">60 Tahun</button>
+            <button class="quiz-option" data-correct="false" data-qid="2">55 Tahun</button>
+            <button class="quiz-option" data-correct="true"  data-qid="2">63 Tahun</button>
+            <div class="quiz-feedback" id="fb2"></div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="quiz-box">
+            <div class="question">3. Siapa istri pertama Rasulullah SAW?</div>
+            <button class="quiz-option" data-correct="false" data-qid="3">Aisyah RA</button>
+            <button class="quiz-option" data-correct="true"  data-qid="3">Khadijah RA</button>
+            <button class="quiz-option" data-correct="false" data-qid="3">Fatimah RA</button>
+            <div class="quiz-feedback" id="fb3"></div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="quiz-box">
+            <div class="question">4. Apa gelar Rasulullah SAW sejak muda?</div>
+            <button class="quiz-option" data-correct="false" data-qid="4">Al-Hafidz</button>
+            <button class="quiz-option" data-correct="false" data-qid="4">Al-Faruq</button>
+            <button class="quiz-option" data-correct="true"  data-qid="4">Al-Amin</button>
+            <div class="quiz-feedback" id="fb4"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Skor -->
+      <div class="text-center mt-4">
+        <button class="btn btn-dark" onclick="showScore()">Lihat Skor Saya 🏆</button>
+        <div id="scoreResult" class="mt-3 fw-bold fs-5" style="color:#1a1a2e;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAKTA GRID -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="section-title text-center">Fakta Lainnya</h2>
+      <div class="title-line"></div>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <div class="fakta-card">
+            <div class="icon">🌙</div>
+            <h5>Shalat Tahajud Rutin</h5>
+            <p>Rasulullah SAW selalu bangun malam untuk shalat tahajud hingga kaki beliau bengkak. Beliau bersabda: "Tidakkah aku pantas menjadi hamba yang bersyukur?"</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="fakta-card">
+            <div class="icon">🐈</div>
+            <h5>Sayang Binatang</h5>
+            <p>Rasulullah SAW sangat menyayangi binatang. Beliau pernah memotong ujung bajunya agar tidak membangunkan kucing yang tidur di atasnya.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="fakta-card">
+            <div class="icon">🌿</div>
+            <h5>Suka Bersiwak</h5>
+            <p>Beliau sangat memperhatikan kebersihan gigi dengan siwak (batang kayu Arak). Siwak adalah sunnahnya yang sangat dianjurkan bagi umat Islam.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="fakta-card">
+            <div class="icon">🍯</div>
+            <h5>Suka Madu & Kurma</h5>
+            <p>Makanan favorit Rasulullah SAW adalah madu, kurma, dan susu. Beliau juga menyukai labu (qar'ah) dan cuka sebagai teman makan roti.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="fakta-card">
+            <div class="icon">👦</div>
+            <h5>Yatim Sejak Lahir</h5>
+            <p>Ayah beliau, Abdullah, wafat sebelum Rasulullah lahir. Ibunda Aminah wafat saat beliau berusia 6 tahun. Namun beliau tumbuh menjadi manusia paling mulia.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="fakta-card">
+            <div class="icon">🤲</div>
+            <h5>Pemaaf Sejati</h5>
+            <p>Saat Fathu Makkah, beliau memaafkan seluruh penduduk Makkah yang telah menyiksanya bertahun-tahun. Ini bukti akhlak beliau yang luar biasa.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <h6>☪ Sirah Nabawiyah</h6>
+          <p style="font-size:0.87rem;">Website edukasi sejarah Nabi Muhammad SAW. Dibuat untuk pembelajaran dan pengetahuan.</p>
+        </div>
+        <div class="col-md-4">
+          <h6>Menu</h6>
+          <ul class="list-unstyled" style="font-size:0.88rem;">
+            <li><a href="index.html"><i class="bi bi-chevron-right me-1"></i>Beranda</a></li>
+            <li><a href="sejarah.html"><i class="bi bi-chevron-right me-1"></i>Sejarah</a></li>
+            <li><a href="warisan.html"><i class="bi bi-chevron-right me-1"></i>Warisan</a></li>
+            <li><a href="fakta.html"><i class="bi bi-chevron-right me-1"></i>Fakta Unik</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h6>Kontak</h6>
+          <ul class="list-unstyled" style="font-size:0.88rem;">
+            <li class="mb-1"><i class="bi bi-person me-2 text-warning"></i>Rayhan</li>
+            <li class="mb-1"><i class="bi bi-envelope me-2 text-warning"></i><a href="mailto:reymou@gmail.com">reymou@gmail.com</a></li>
+            <li><i class="bi bi-whatsapp me-2 text-warning"></i><a href="https://wa.me/6285808677684">858-0867-7684</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2025 Rayhan — reymou@gmail.com | WA: 858-0867-7684. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <button id="backToTop" title="Kembali ke atas"><i class="bi bi-arrow-up"></i></button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+  <script>
+    // ── Counter Animasi ──
+    const counters = document.querySelectorAll('.num[data-target]');
+    const countObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseInt(el.getAttribute('data-target'));
+          let count = 0;
+          const step = Math.ceil(target / 40);
+          const interval = setInterval(function () {
+            count += step;
+            if (count >= target) { count = target; clearInterval(interval); }
+            el.textContent = count;
+          }, 40);
+          countObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(function (c) { countObserver.observe(c); });
+
+    // ── Quiz ──
+    const answered = {};
+
+    document.querySelectorAll('.quiz-option').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        const qid = this.getAttribute('data-qid');
+        if (answered[qid]) return;
+        answered[qid] = true;
+
+        const isCorrect = this.getAttribute('data-correct') === 'true';
+        const allOptions = document.querySelectorAll('.quiz-option[data-qid="' + qid + '"]');
+        const fb = document.getElementById('fb' + qid);
+
+        allOptions.forEach(function (opt) {
+          opt.disabled = true;
+          if (opt.getAttribute('data-correct') === 'true') opt.classList.add('correct');
+        });
+
+        if (isCorrect) {
+          this.classList.add('correct');
+          fb.textContent = '✅ Benar! Bagus sekali!';
+          fb.style.color = '#198754';
+        } else {
+          this.classList.add('wrong');
+          fb.textContent = '❌ Kurang tepat. Jawaban yang benar sudah ditandai hijau.';
+          fb.style.color = '#dc3545';
+        }
+      });
+    });
+
+    function showScore() {
+      const totalQ = 4;
+      let correct = 0;
+      document.querySelectorAll('.quiz-option.correct').forEach(function (btn) {
+        const qid = btn.getAttribute('data-qid');
+        if (answered[qid] && btn.getAttribute('data-correct') === 'true') {
+          const allOpts = document.querySelectorAll('.quiz-option[data-qid="' + qid + '"]');
+          allOpts.forEach(function (o) {
+            if (o.classList.contains('correct') && !o.classList.contains('wrong')) correct++;
+          });
+        }
+      });
+      // hitung benar dari answered
+      let score = 0;
+      for (let q in answered) {
+        const selected = document.querySelector('.quiz-option[data-qid="' + q + '"].correct:not(.wrong)');
+        if (selected) score++;
+      }
+      const el = document.getElementById('scoreResult');
+      if (Object.keys(answered).length < totalQ) {
+        el.textContent = '⚠️ Jawab semua soal dulu ya!';
+        el.style.color = '#856404';
+      } else {
+        const pesan = score === 4 ? '🏆 Sempurna! Kamu luar biasa!' :
+                      score >= 2 ? '👍 Bagus! Terus belajar!' : '📖 Yuk baca lagi materinya!';
+        el.textContent = 'Skor kamu: ' + score + ' / ' + totalQ + ' — ' + pesan;
+        el.style.color = score === 4 ? '#198754' : '#1a1a2e';
+      }
+    }
+  </script>
+</body>
+</html>

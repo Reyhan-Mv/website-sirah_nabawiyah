@@ -1,0 +1,313 @@
+/* =====================
+   style.css - Shared
+   Sejarah Rasulullah SAW
+   ===================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* ── NAVBAR ── */
+.navbar-brand span {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.navbar .nav-link {
+  font-size: 0.95rem;
+  padding: 0.4rem 0.8rem;
+}
+
+.navbar .nav-link.active,
+.navbar .nav-link:hover {
+  color: #ffc107 !important;
+}
+
+/* ── HERO (Beranda) ── */
+.hero {
+  background: linear-gradient(to right, #1a1a2e, #16213e);
+  color: white;
+  padding: 90px 0 70px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.hero p {
+  color: #ccc;
+  font-size: 1rem;
+}
+
+.hero .tahun {
+  color: #ffc107;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* ── PAGE HEADER (semua halaman selain beranda) ── */
+.page-header {
+  background: linear-gradient(to right, #1a1a2e, #16213e);
+  color: white;
+  padding: 50px 0 40px;
+  text-align: center;
+}
+
+.page-header h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.page-header p {
+  color: #ccc;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* ── SECTION TITLE ── */
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.title-line {
+  width: 50px;
+  height: 3px;
+  background-color: #ffc107;
+  margin: 0 auto 30px;
+  border-radius: 2px;
+}
+
+/* ── CARDS ── */
+.card {
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.card img {
+  border-radius: 8px 8px 0 0;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* ── FAKTA UNIK CARDS ── */
+.fakta-card {
+  background: white;
+  border-radius: 10px;
+  padding: 25px 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  text-align: center;
+  transition: transform 0.25s, box-shadow 0.25s;
+  height: 100%;
+  cursor: default;
+}
+
+.fakta-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.13);
+}
+
+.fakta-card .icon {
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+}
+
+.fakta-card h5 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #1a1a2e;
+}
+
+.fakta-card p {
+  font-size: 0.88rem;
+  color: #666;
+  margin: 0;
+}
+
+/* ── QUOTE BOX ── */
+.quote-box {
+  background: #1a1a2e;
+  color: white;
+  border-left: 4px solid #ffc107;
+  padding: 20px 25px;
+  border-radius: 6px;
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.quote-box cite {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: #ffc107;
+  font-style: normal;
+}
+
+/* ── STAT BOXES ── */
+.stat-box {
+  background: #1a1a2e;
+  color: white;
+  border-radius: 8px;
+  padding: 25px 15px;
+  text-align: center;
+}
+
+.stat-box .angka {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffc107;
+}
+
+.stat-box p {
+  font-size: 0.85rem;
+  margin: 0;
+  color: #ccc;
+}
+
+/* ── TIMELINE (Sejarah) ── */
+.timeline-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+.timeline-list::before {
+  content: '';
+  position: absolute;
+  left: 18px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #dee2e6;
+}
+
+.timeline-list li {
+  position: relative;
+  padding: 0 0 28px 52px;
+}
+
+.timeline-list li::before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 5px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ffc107;
+  border: 3px solid white;
+  box-shadow: 0 0 0 2px #ffc107;
+}
+
+.timeline-list li .tl-year {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #ffc107;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 3px;
+}
+
+.timeline-list li h6 {
+  font-weight: 700;
+  font-size: 0.98rem;
+  margin-bottom: 4px;
+  color: #1a1a2e;
+}
+
+.timeline-list li p {
+  font-size: 0.88rem;
+  color: #666;
+  margin: 0;
+}
+
+/* ── WARISAN CARDS ── */
+.warisan-icon {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+/* ── FOOTER ── */
+footer {
+  background-color: #1a1a2e;
+  color: #ccc;
+  padding: 40px 0 20px;
+}
+
+footer h6 {
+  color: #ffc107;
+  font-weight: 700;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+footer a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 0.88rem;
+}
+
+footer a:hover {
+  color: #ffc107;
+}
+
+footer .footer-bottom {
+  border-top: 1px solid #333;
+  margin-top: 25px;
+  padding-top: 15px;
+  font-size: 0.82rem;
+  color: #777;
+  text-align: center;
+}
+
+/* ── BACK TO TOP ── */
+#backToTop {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  z-index: 999;
+  display: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding: 0;
+  font-size: 1rem;
+  background-color: #1a1a2e;
+  border: 2px solid #ffc107;
+  color: #ffc107;
+}
+
+#backToTop:hover {
+  background-color: #ffc107;
+  color: #1a1a2e;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 576px) {
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+  .stat-box .angka {
+    font-size: 1.5rem;
+  }
+}
